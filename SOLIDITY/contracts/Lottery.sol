@@ -71,7 +71,7 @@ contract Lottery is VRFConsumerBaseV2,AutomationCompatibleInterface{
     uint256,
     uint[] memory randomWords
     )internal override{
-      uint256 indexOfwinner=randomWords[0]% players.length;
+      uint256 indexOfwinner=randomWords[0]%players.length;
       address payable recentWinner=players[indexOfwinner];
       s_recentWinner=recentWinner;
       stateLottery=LotteryState.Open;

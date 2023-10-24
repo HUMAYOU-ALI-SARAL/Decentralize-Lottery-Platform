@@ -39,6 +39,12 @@ module.exports={
       blockConfirmation:6,
     }
   },
+  gasReporter:{
+   enabled:false,
+   currency:"USD",
+   outputFile:"gas-reporter.txt",
+   noColors:true
+  },
   mocha: {
     timeout: 500000, // 500 seconds max for running tests
 },
