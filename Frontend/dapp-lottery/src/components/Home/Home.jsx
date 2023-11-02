@@ -1,7 +1,10 @@
+
+
 import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import './Home.css'
 
+import { Link } from 'react-router-dom';
 function Home() {
   const [hasConnectedMetaMask, setHasConnectedMetaMask] = useState(false);
   const [isEnteringLottery, setIsEnteringLottery] = useState(false);
@@ -51,18 +54,18 @@ function Home() {
 
   return (
     <div>
-      <animated.nav
-        style={navigationSpring}
-        className="navbar"
-      >
-        <a href="/marketplace">Marketplace</a>
-        {hasConnectedMetaMask ? (
-          <button onClick={handleEnterLottery}>Get into Lottery</button>
-        ) : (
-          <button onClick={handleConnectMetaMask}>Connect MetaMask</button>
-        )}
-      </animated.nav>
-
+        <animated.nav
+  style={navigationSpring}
+  className="navbar"
+>
+  <Link to="/Marketplace">Marketplace</Link> {/* Use Link instead of anchor (a) */}
+  {hasConnectedMetaMask ? (
+    <button onClick={handleEnterLottery}>Get into Lottery</button>
+  ) : (
+    <button onClick={handleConnectMetaMask}>Connect MetaMask</button>
+  )}
+</animated.nav>
+       
       <animated.section className="hero" style={heroSectionSpring}>
         <h1>Lottery DApp</h1>
         <p>Win big prizes!</p>
